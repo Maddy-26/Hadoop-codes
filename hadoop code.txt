@@ -1,0 +1,602 @@
+[cloudera@quickstart ~]$ ls
+calci.sh          Desktop    exp2.sh      forloop.sh  newdir        orders4.java  pig_1482017623446.log  pig_1499398120528.log  s            unixlab1.sh  workspace
+checkchar.sh      dir.sh     exp3.sh      ifelse.sh   oct2022       orders5.java  pig_1491709380111.log  pig_1668826809131.log  shellprg.sh  unixlab2.sh  xyz
+cloudera-manager  Documents  exp.sh       lib         orders1.csv   orders6.java  pig_1494606897182.log  pig_1668827378165.log  Templates    unixlab3.sh
+cm_api.sh         Downloads  forloop2.sh  lscmd.sh    orders1.java  orders.java   pig_1494653130529.log  pig_1668828214320.log  temp.sh      unixlab4.sh
+datasets          dvs        forloop3.sh  mkdir       orders2.java  pass.txt      pig_1499397408798.log  pig_1669372706241.log  Trash        unixlab5.sh
+derby.log         eclipse    forloop4.sh  Music       orders3.java  Pictures      pig_1499397912499.log  Public                 unixlab1     Videos
+
+[cloudera@quickstart ~]$ ls Desktop
+1987.csv  airlines project.txt  CM.desktop  dept.csv  Eclipse.desktop  emp.csv  gnome-terminal.desktop  navs  titanic.csv  untitled folder
+[cloudera@quickstart ~]$ hadoop fs -ls
+Found 26 items
+drwxr-xr-x   - cloudera cloudera          0 2016-10-25 19:58 .Trash
+drwxr-xr-x   - cloudera cloudera          0 2017-07-20 20:12 _sqoop
+drwxr-xr-x   - cloudera cloudera          0 2016-08-05 22:59 abc
+drwxr-xr-x   - cloudera cloudera          0 2017-05-01 19:56 apr
+drwxr-xr-x   - cloudera cloudera          0 2017-03-05 04:10 dvs_hdfs
+drwxr-xr-x   - cloudera cloudera          0 2017-05-29 19:47 dvs_may_hdfs
+drwxr-xr-x   - cloudera cloudera          0 2022-09-30 21:19 oct2022hadoop
+drwxr-xr-x   - cloudera cloudera          0 2017-07-21 00:13 orders
+drwxr-xr-x   - cloudera cloudera          0 2017-01-18 21:32 orders1
+drwxr-xr-x   - cloudera cloudera          0 2017-04-09 06:06 orders2
+drwxr-xr-x   - cloudera cloudera          0 2017-07-20 20:12 orders3
+drwxr-xr-x   - cloudera cloudera          0 2017-06-13 20:04 orders4
+drwxr-xr-x   - cloudera cloudera          0 2017-06-15 19:31 orders5
+drwxr-xr-x   - cloudera cloudera          0 2017-06-15 19:47 orders6
+drwxr-xr-x   - cloudera cloudera          0 2017-03-27 20:41 ramesh
+-rw-r--r--   1 cloudera cloudera       4221 2016-08-21 20:30 results.csv
+drwxr-xr-x   - cloudera cloudera          0 2017-06-13 19:28 sqoop_may3
+drwxr-xr-x   - cloudera cloudera          0 2017-06-13 19:44 sqoop_may34
+drwxr-xr-x   - cloudera cloudera          0 2017-06-13 19:53 sqoop_may5
+drwxr-xr-x   - cloudera cloudera          0 2016-08-22 20:30 sqoop_out
+drwxr-xr-x   - cloudera cloudera          0 2016-08-22 20:38 sqoop_out1
+-rw-r--r--   1 cloudera cloudera         14 2017-05-01 19:59 temp
+drwxr-xr-x   - cloudera cloudera          0 2017-07-04 20:12 xyz
+drwxr-xr-x   - cloudera cloudera          0 2017-07-04 20:14 xyz1
+[cloudera@quickstart ~]$ hadoop fs -mkdir 20BCAB34
+[cloudera@quickstart ~]$ hadoop fs -ls
+Found 27 items
+drwxr-xr-x   - cloudera cloudera          0 2016-10-25 19:58 .Trash
+drwxr-xr-x   - cloudera cloudera          0 2022-11-25 07:17 20BCAB34
+drwxr-xr-x   - cloudera cloudera          0 2017-07-20 20:12 _sqoop
+drwxr-xr-x   - cloudera cloudera          0 2016-08-05 22:59 abc
+drwxr-xr-x   - cloudera cloudera          0 2017-05-01 19:56 apr
+drwxr-xr-x   - cloudera cloudera          0 2017-03-05 04:10 dvs_hdfs
+drwxr-xr-x   - cloudera cloudera          0 2017-05-29 19:47 dvs_may_hdfs
+drwxr-xr-x   - cloudera cloudera          0 2022-09-30 21:19 oct2022hadoop
+drwxr-xr-x   - cloudera cloudera          0 2017-07-21 00:13 orders
+drwxr-xr-x   - cloudera cloudera          0 2017-01-18 21:32 orders1
+drwxr-xr-x   - cloudera cloudera          0 2017-04-09 06:06 orders2
+drwxr-xr-x   - cloudera cloudera          0 2017-07-20 20:12 orders3
+drwxr-xr-x   - cloudera cloudera          0 2017-06-13 20:04 orders4
+drwxr-xr-x   - cloudera cloudera          0 2017-06-15 19:31 orders5
+drwxr-xr-x   - cloudera cloudera          0 2017-06-15 19:47 orders6
+drwxr-xr-x   - cloudera cloudera          0 2017-03-27 20:41 ramesh
+-rw-r--r--   1 cloudera cloudera       4221 2016-08-21 20:30 results.csv
+drwxr-xr-x   - cloudera cloudera          0 2017-06-13 19:28 sqoop_may3
+drwxr-xr-x   - cloudera cloudera          0 2017-06-13 19:44 sqoop_may34
+drwxr-xr-x   - cloudera cloudera          0 2017-06-13 19:53 sqoop_may5
+drwxr-xr-x   - cloudera cloudera          0 2016-08-22 20:30 sqoop_out
+drwxr-xr-x   - cloudera cloudera          0 2016-08-22 20:38 sqoop_out1
+-rw-r--r--   1 cloudera cloudera         14 2017-05-01 19:59 temp
+drwxr-xr-x   - cloudera cloudera          0 2017-07-04 20:12 xyz
+drwxr-xr-x   - cloudera cloudera          0 2017-07-04 20:14 xyz1
+[cloudera@quickstart ~]$ hadoop fs -copyFromLocal /home/cloudera/Desktop/emp.csv /user/cloudera/20BCAB34
+[cloudera@quickstart ~]$ 
+
+
+
+hadoop fs -ls 20BCAB34
+Found 1 items
+-rw-r--r--   1 cloudera cloudera        445 2022-11-25 07:18 20BCAB34/emp.csv
+[cloudera@quickstart ~]$ 
+[cloudera@quickstart ~]$ 
+[cloudera@quickstart ~]$ pig
+
+grunt> A = load '/user/cloudera/20BCAB34/emp.csv';
+grunt> dump A
+
+(eid,ename,epos,esal,ecom,edpno)
+(7839,KING,PRESIDENT,5000,,10)
+(7782,CLARK,MANAGER,2450,,10)
+(7934,MILLER,CLERK,1300,,10)
+(7369,SMITH,CLERK,800,,20)
+(7566,JONES,MANAGER,2975,,20)
+(7876,ADAMS,CLERK,1100,,20)
+(7902,FORD,ANALYST,3000,,20)
+(7788,SCOTT,ANALYST,3000,,20)
+(7499,ALLEN,SALESMAN,1600,300,30)
+(7844,TURNER,SALESMAN,1500,0,30)
+(7900,JAMES,CLERK,950,,30)
+(7698,BLAKE,MANAGER,2850,,30)
+(7654,MARTIN,SALESMAN,1250,1400,30)
+(7521,WARD,SALESMAN,1250,500,30)
+
+grunt> A = load '/user/cloudera/20BCAB34/emp.csv' using PigStorage(',') as (eid:int,ename:chararray,epos:chararray,esal:int,ecom:int,edpno:int);
+
+grunt> dump A
+
+(,ename,epos,,,)
+(7839,KING,PRESIDENT,5000,,10)
+(7782,CLARK,MANAGER,2450,,10)
+(7934,MILLER,CLERK,1300,,10)
+(7369,SMITH,CLERK,800,,20)
+(7566,JONES,MANAGER,2975,,20)
+(7876,ADAMS,CLERK,1100,,20)
+(7902,FORD,ANALYST,3000,,20)
+(7788,SCOTT,ANALYST,3000,,20)
+(7499,ALLEN,SALESMAN,1600,300,30)
+(7844,TURNER,SALESMAN,1500,0,30)
+(7900,JAMES,CLERK,950,,30)
+(7698,BLAKE,MANAGER,2850,,30)
+(7654,MARTIN,SALESMAN,1250,1400,30)
+(7521,WARD,SALESMAN,1250,500,30)
+
+
+runt> B = filter A by edpno==20;
+grunt> dump B
+
+(7369,SMITH,CLERK,800,,20)
+(7566,JONES,MANAGER,2975,,20)
+(7876,ADAMS,CLERK,1100,,20)
+(7902,FORD,ANALYST,3000,,20)
+(7788,SCOTT,ANALYST,3000,,20)
+
+
+grunt> B2 = filter A by edpno==20 and epos=='MANAGER';
+grunt> dump B2
+
+(7566,JONES,MANAGER,2975,,20)
+
+
+
+
+grunt> C = limit B 3;
+grunt> dump C
+
+(7369,SMITH,CLERK,800,,20)
+(7566,JONES,MANAGER,2975,,20)
+(7876,ADAMS,CLERK,1100,,20)
+
+
+grunt> D = order C by esal desc;
+grunt> dump D
+
+
+(7566,JONES,MANAGER,2975,,20)
+(7876,ADAMS,CLERK,1100,,20)
+(7369,SMITH,CLERK,800,,20)
+grunt> 
+
+
+
+
+store D into '/20BCAB34/pigout1' using PigStorage(',');
+
+2022-11-25 07:54:32,093 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Success!
+
+
+grunt> E = foreach A generate eid;
+
+grunt> dump E
+
+()
+(7839)
+(7782)
+(7934)
+(7369)
+(7566)
+(7876)
+(7902)
+(7788)
+(7499)
+(7844)
+(7900)
+(7698)
+(7654)
+(7521)
+
+
+grunt> F = foreach A generate*,ecom*2 as Bonus, esal*5 as Incentive;
+grunt> dump F
+
+
+
+(,ename,epos,,,,,)
+(7839,KING,PRESIDENT,5000,,10,,25000)
+(7782,CLARK,MANAGER,2450,,10,,12250)
+(7934,MILLER,CLERK,1300,,10,,6500)
+(7369,SMITH,CLERK,800,,20,,4000)
+(7566,JONES,MANAGER,2975,,20,,14875)
+(7876,ADAMS,CLERK,1100,,20,,5500)
+(7902,FORD,ANALYST,3000,,20,,15000)
+(7788,SCOTT,ANALYST,3000,,20,,15000)
+(7499,ALLEN,SALESMAN,1600,300,30,600,8000)
+(7844,TURNER,SALESMAN,1500,0,30,0,7500)
+(7900,JAMES,CLERK,950,,30,,4750)
+(7698,BLAKE,MANAGER,2850,,30,,14250)
+(7654,MARTIN,SALESMAN,1250,1400,30,2800,6250)
+(7521,WARD,SALESMAN,1250,500,30,1000,6250)
+grunt> 
+
+
+
+grunt> G = foreach A generate SUBSTRING(ename,0,4);
+grunt> dump G
+
+(enam)
+(KING)
+(CLAR)
+(MILL)
+(SMIT)
+(JONE)
+(ADAM)
+(FORD)
+(SCOT)
+(ALLE)
+(TURN)
+(JAME)
+(BLAK)
+(MART)
+(WARD)
+grunt> 
+
+
+grunt> H = foreach A generate $0,$1;
+grunt> dump H
+
+(,ename)
+(7839,KING)
+(7782,CLARK)
+(7934,MILLER)
+(7369,SMITH)
+(7566,JONES)
+(7876,ADAMS)
+(7902,FORD)
+(7788,SCOTT)
+(7499,ALLEN)
+(7844,TURNER)
+(7900,JAMES)
+(7698,BLAKE)
+(7654,MARTIN)
+(7521,WARD)
+
+grunt> I = group A by edpno;
+grunt> dump I
+
+(10,{(7934,MILLER,CLERK,1300,,10),(7782,CLARK,MANAGER,2450,,10),(7839,KING,PRESIDENT,5000,,10)})
+(20,{(7876,ADAMS,CLERK,1100,,20),(7566,JONES,MANAGER,2975,,20),(7369,SMITH,CLERK,800,,20),(7788,SCOTT,ANALYST,3000,,20),(7902,FORD,ANALYST,3000,,20)})
+(30,{(7521,WARD,SALESMAN,1250,500,30),(7654,MARTIN,SALESMAN,1250,1400,30),(7698,BLAKE,MANAGER,2850,,30),(7900,JAMES,CLERK,950,,30),(7844,TURNER,SALESMAN,1500,0,30),(7499,ALLEN,SALESMAN,1600,300,30)})
+(,{(,ename,epos,,,)})
+grunt> 
+
+
+
+
+grunt> J = foreach I generate group as edpno, COUNT($1) as count;
+grunt> dump J
+(10,3)
+(20,5)
+(30,6)
+
+
+
+grunt> L = group A by (edpno, epos);
+grunt> dump L
+
+((10,MANAGER),{(7782,CLARK,MANAGER,2450,,10)})
+((10,PRESIDENT),{(7839,KING,PRESIDENT,5000,,10)})
+((20,CLERK),{(7369,SMITH,CLERK,800,,20),(7876,ADAMS,CLERK,1100,,20)})
+((20,ANALYST),{(7788,SCOTT,ANALYST,3000,,20),(7902,FORD,ANALYST,3000,,20)})
+((20,MANAGER),{(7566,JONES,MANAGER,2975,,20)})
+((30,CLERK),{(7900,JAMES,CLERK,950,,30)})
+((30,MANAGER),{(7698,BLAKE,MANAGER,2850,,30)})
+((30,SALESMAN),{(7521,WARD,SALESMAN,1250,500,30),(7654,MARTIN,SALESMAN,1250,1400,30),(7844,TURNER,SALESMAN,1500,0,30),(7499,ALLEN,SALESMAN,1600,300,30)})
+((,epos),{(,ename,epos,,,)})
+grunt> 
+
+
+
+grunt> SPLIT A into B if edpno==10, C if edpno==20, D if epos=='MANAGER';
+grunt> X = SPLIT A into B if edpno==10, C if edpno==20, D if epos=='MANAGER';
+
+grunt> dump B
+
+(7839,KING,PRESIDENT,5000,,10)
+(7782,CLARK,MANAGER,2450,,10)
+(7934,MILLER,CLERK,1300,,10)
+
+grunt> dump C
+
+(7369,SMITH,CLERK,800,,20)
+(7566,JONES,MANAGER,2975,,20)
+(7876,ADAMS,CLERK,1100,,20)
+(7902,FORD,ANALYST,3000,,20)
+(7788,SCOTT,ANALYST,3000,,20)
+
+grunt> dump D
+
+(7782,CLARK,MANAGER,2450,,10)
+(7566,JONES,MANAGER,2975,,20)
+(7698,BLAKE,MANAGER,2850,,30)
+
+
+
+grunt> A = load '/user/cloudera/20BCAB34/emp.csv' using PigStorage(',') as (eid:int,ename:chararray,epos:chararray,esal:int,ecom:int,edpno:int);
+grunt> dump A
+
+(,ename,epos,,,)
+(7839,KING,PRESIDENT,5000,,10)
+(7782,CLARK,MANAGER,2450,,10)
+(7934,MILLER,CLERK,1300,,10)
+(7369,SMITH,CLERK,800,,20)
+(7566,JONES,MANAGER,2975,,20)
+(7876,ADAMS,CLERK,1100,,20)
+(7902,FORD,ANALYST,3000,,20)
+(7788,SCOTT,ANALYST,3000,,20)
+(7499,ALLEN,SALESMAN,1600,300,30)
+(7844,TURNER,SALESMAN,1500,0,30)
+(7900,JAMES,CLERK,950,,30)
+(7698,BLAKE,MANAGER,2850,,30)
+(7654,MARTIN,SALESMAN,1250,1400,30)
+(7521,WARD,SALESMAN,1250,500,30)
+
+grunt> B = load '/user/cloudera/20BCAB34/dept.csv' using PigStorage(',') as (edpno:int,epos:chararray,ecity:chararray);
+
+grunt> dump B
+
+(,epos,ecity)
+(10,ACCOUNTING,NEW YORK)
+(20,RESEARCH,DALLAS)
+(30,SALES,CHICAGO)
+(40,OPERATIONS,BOSTON)
+grunt> 
+
+
+
+
+
+grunt> C = JOIN A by edpno,B by edpno;
+grunt> dump C
+
+(7934,MILLER,CLERK,1300,,10,10,ACCOUNTING,NEW YORK)
+(7782,CLARK,MANAGER,2450,,10,10,ACCOUNTING,NEW YORK)
+(7839,KING,PRESIDENT,5000,,10,10,ACCOUNTING,NEW YORK)
+(7876,ADAMS,CLERK,1100,,20,20,RESEARCH,DALLAS)
+(7566,JONES,MANAGER,2975,,20,20,RESEARCH,DALLAS)
+(7369,SMITH,CLERK,800,,20,20,RESEARCH,DALLAS)
+(7788,SCOTT,ANALYST,3000,,20,20,RESEARCH,DALLAS)
+(7902,FORD,ANALYST,3000,,20,20,RESEARCH,DALLAS)
+(7521,WARD,SALESMAN,1250,500,30,30,SALES,CHICAGO)
+(7654,MARTIN,SALESMAN,1250,1400,30,30,SALES,CHICAGO)
+(7698,BLAKE,MANAGER,2850,,30,30,SALES,CHICAGO)
+(7900,JAMES,CLERK,950,,30,30,SALES,CHICAGO)
+(7844,TURNER,SALESMAN,1500,0,30,30,SALES,CHICAGO)
+(7499,ALLEN,SALESMAN,1600,300,30,30,SALES,CHICAGO)
+
+
+grunt> D = foreach C generate A::eid,B::epos;
+grunt> dump D
+
+(7934,ACCOUNTING)
+(7782,ACCOUNTING)
+(7839,ACCOUNTING)
+(7876,RESEARCH)
+(7566,RESEARCH)
+(7369,RESEARCH)
+(7788,RESEARCH)
+(7902,RESEARCH)
+(7521,SALES)
+(7654,SALES)
+(7698,SALES)
+(7900,SALES)
+(7844,SALES)
+(7499,SALES)
+grunt> 
+
+
+grunt> E = JOIN A by edpno RIGHT OUTER, B by edpno;
+grunt> dump E
+
+(7934,MILLER,CLERK,1300,,10,10,ACCOUNTING,NEW YORK)
+(7782,CLARK,MANAGER,2450,,10,10,ACCOUNTING,NEW YORK)
+(7839,KING,PRESIDENT,5000,,10,10,ACCOUNTING,NEW YORK)
+(7876,ADAMS,CLERK,1100,,20,20,RESEARCH,DALLAS)
+(7566,JONES,MANAGER,2975,,20,20,RESEARCH,DALLAS)
+(7369,SMITH,CLERK,800,,20,20,RESEARCH,DALLAS)
+(7788,SCOTT,ANALYST,3000,,20,20,RESEARCH,DALLAS)
+(7902,FORD,ANALYST,3000,,20,20,RESEARCH,DALLAS)
+(7521,WARD,SALESMAN,1250,500,30,30,SALES,CHICAGO)
+(7654,MARTIN,SALESMAN,1250,1400,30,30,SALES,CHICAGO)
+(7698,BLAKE,MANAGER,2850,,30,30,SALES,CHICAGO)
+(7900,JAMES,CLERK,950,,30,30,SALES,CHICAGO)
+(7844,TURNER,SALESMAN,1500,0,30,30,SALES,CHICAGO)
+(7499,ALLEN,SALESMAN,1600,300,30,30,SALES,CHICAGO)
+(,,,,,,40,OPERATIONS,BOSTON)
+(,,,,,,,epos,ecity)
+
+
+
+
+[cloudera@quickstart ~]$ hadoop fs -copyFromLocal /home/cloudera/Desktop/wordcount.txt /user/cloudera/MADDY
+[cloudera@quickstart ~]$ hadoop fs -ls MADDY
+Found 3 items
+-rw-r--r--   1 cloudera cloudera        102 2022-11-25 02:37 MADDY/dept.csv
+-rw-r--r--   1 cloudera cloudera        445 2022-11-25 02:35 MADDY/emp.csv
+-rw-r--r--   1 cloudera cloudera         92 2022-11-25 10:27 MADDY/wordcount.txt
+[cloudera@quickstart ~]$ pig
+
+grunt> lines = load '/user/cloudera/MADDY/wordcount.txt' as (line:chararray);
+grunt> dump lines
+
+(upma sucks to the core.)
+(r u for real?)
+(supper ah?)
+(muesli is bruce lee)
+(upma really sucks)
+
+grunt> token = foreach lines generate TOKENIZE(line);
+
+({(upma),(sucks),(to),(the),(core.)})
+({(r),(u),(for),(real?)})
+({(supper),(ah?)})
+({(muesli),(is),(bruce),(lee)})
+({(upma),(really),(supper)})
+
+grunt> flats = foreach token generate FLATTEN($0);
+grunt> dump flats
+
+(upma)
+(sucks)
+(to)
+(the)
+(core.)
+(r)
+(u)
+(for)
+(real?)
+(supper)
+(ah?)
+(muesli)
+(is)
+(bruce)
+(lee)
+(upma)
+(really)
+(sucks)
+
+
+group_words = group flats by $0;
+grunt> dump group_words]
+
+(r,{(r)})
+(u,{(u)})
+(is,{(is)})
+(to,{(to)})
+(ah?,{(ah?)})
+(for,{(for)})
+(lee,{(lee)})
+(the,{(the)})
+(bruce,{(bruce)})
+(core.,{(core.)})
+(real?,{(real?)})
+(sucks,{(sucks),(sucks)})
+(upma,{(upma),(upma)})
+(muesli,{(muesli)})
+(really,{(really)})
+(supper,{(supper)})
+
+
+
+grunt> count_word = foreach group_words generate group as word, COUNT($1) as word_occurence;
+grunt> dump count_word
+
+(r,1)
+(u,1)
+(is,1)
+(to,1)
+(ah?,1)
+(for,1)
+(lee,1)
+(the,1)
+(bruce,1)
+(core.,1)
+(real?,1)
+(sucks,2)
+(upma,2)
+(muesli,1)
+(really,1)
+(supper,1)
+grunt> 
+
+
+
+[cloudera@quickstart ~]$ hive
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j.properties
+hive> show databases;
+OK
+abc
+default
+dvs
+dvs1
+dvs11
+dvs88
+dvs_apr
+dvs_dec
+dvs_feb17
+dvs_jun
+dvs_june
+dvs_mar17
+dvs_may
+dvs_nov
+dvs_nov_wknd
+test
+xyz
+xyz11
+Time taken: 0.574 seconds, Fetched: 18 row(s)
+hive> create database A;
+OK
+Time taken: 2.154 seconds
+hive> use A;
+OK
+Time taken: 0.05 seconds
+
+
+hive> show databases;
+OK
+a
+abc
+default
+dvs
+dvs1
+dvs11
+dvs88
+dvs_apr
+dvs_dec
+dvs_feb17
+dvs_jun
+dvs_june
+dvs_mar17
+dvs_may
+dvs_nov
+dvs_nov_wknd
+test
+xyz
+xyz11
+Time taken: 0.014 seconds, Fetched: 19 row(s)
+hive> quit
+    > ;
+[cloudera@quickstart ~]$ hadoop fs -ls /user/hive/warehouse
+Found 30 items
+drwxrwxrwx   - hive     hive          0 2022-11-25 10:37 /user/hive/warehouse/a.db
+drwxrwxrwx   - hive     hive          0 2017-04-08 20:17 /user/hive/warehouse/abc
+drwxrwxrwx   - hive     hive          0 2017-03-27 19:23 /user/hive/warehouse/abc.db
+drwxrwxrwx   - hive     hive          0 2017-03-24 02:23 /user/hive/warehouse/airlines_temp1
+drwxrwxrwx   - hive     hive          0 2017-08-01 03:54 /user/hive/warehouse/dvs.db
+drwxrwxrwx   - hive     hive          0 2016-12-17 15:17 /user/hive/warehouse/dvs1.db
+drwxrwxrwx   - hive     hive          0 2017-03-05 02:04 /user/hive/warehouse/dvs11.db
+drwxrwxrwx   - hive     hive          0 2017-07-29 20:00 /user/hive/warehouse/dvs88.db
+drwxrwxrwx   - hive     hive          0 2017-05-26 21:36 /user/hive/warehouse/dvs_apr.db
+drwxrwxrwx   - hive     hive          0 2017-01-02 19:23 /user/hive/warehouse/dvs_dec.db
+drwxrwxrwx   - hive     hive          0 2017-03-24 02:50 /user/hive/warehouse/dvs_feb17.db
+drwxrwxrwx   - hive     hive          0 2017-07-20 23:55 /user/hive/warehouse/dvs_jun.db
+drwxrwxrwx   - hive     hive          0 2017-07-19 20:19 /user/hive/warehouse/dvs_june.db
+drwxrwxrwx   - hive     hive          0 2017-04-09 05:48 /user/hive/warehouse/dvs_mar17.db
+drwxrwxrwx   - hive     hive          0 2017-06-15 19:39 /user/hive/warehouse/dvs_may.db
+drwxrwxrwx   - hive     hive          0 2016-12-21 18:59 /user/hive/warehouse/dvs_nov.db
+drwxrwxrwx   - hive     hive          0 2016-12-24 04:43 /user/hive/warehouse/dvs_nov_wknd.db
+drwxrwxrwx   - hive     hive          0 2016-08-22 19:49 /user/hive/warehouse/emp_buc
+drwxrwxrwx   - hive     hive          0 2016-09-22 21:16 /user/hive/warehouse/emp_buc1
+drwxrwxrwx   - hive     hive          0 2017-03-27 19:57 /user/hive/warehouse/emp_temp
+drwxrwxrwx   - hive     hive          0 2017-01-18 21:32 /user/hive/warehouse/ord1
+drwxrwxrwx   - hive     hive          0 2017-04-08 20:49 /user/hive/warehouse/ord11
+drwxrwxrwx   - hive     hive          0 2017-04-08 20:36 /user/hive/warehouse/orders1
+drwxr-xr-x   - cloudera hive          0 2016-08-23 23:58 /user/hive/warehouse/orders2
+drwxrwxrwx   - hive     hive          0 2017-07-20 20:13 /user/hive/warehouse/orders3
+drwxrwxrwx   - hive     hive          0 2017-01-18 21:35 /user/hive/warehouse/ords
+drwxrwxrwx   - hive     hive          0 2017-01-18 21:35 /user/hive/warehouse/ords1
+drwxrwxrwx   - hive     hive          0 2017-07-29 20:16 /user/hive/warehouse/test.db
+drwxrwxrwx   - hive     hive          0 2017-03-27 19:20 /user/hive/warehouse/xyz.db
+drwxrwxrwx   - hive     hive          0 2017-07-04 20:34 /user/hive/warehouse/xyz11.db
+[cloudera@quickstart ~]$ hive
+
+hive> create table if not exists emp(empno int, ename string, sal float, comm float, dpno int) row format delimited fields terminated by ',';
+OK
+Time taken: 0.66 seconds
+hive> describe emp;
+OK
+empno               	int                 	                    
+ename               	string              	                    
+sal                 	float               	                    
+comm                	float               	                    
+dpno                	int                 	                    
+Time taken: 0.198 seconds, Fetched: 5 row(s)
+hive> 
+
+
+
+
+
+
